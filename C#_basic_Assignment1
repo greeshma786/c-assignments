@@ -1,0 +1,225 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace assignment1
+{
+    class Program
+    {
+        static void Q1()
+        {
+            Console.WriteLine("welcome to the world of c#");
+        }
+        static void Q2()
+        {
+            string args = Console.ReadLine();
+            Console.WriteLine("Hi! {0} \nwelcome to the world of c#", args);
+        }//all number between 2 numbers
+        static void Q3()
+        {
+            int a = Int32.Parse(Console.ReadLine());
+            int b = Int32.Parse(Console.ReadLine());
+            for (int i = a + 1; i < b; i++)
+            {
+                Console.WriteLine(i);
+            }
+        }
+        //even or odd number
+        static void Q4()
+        {
+            int k = Int32.Parse(Console.ReadLine());
+            if (k % 2 == 0)
+                Console.WriteLine("{} is even number", k);
+            else
+                Console.WriteLine("{0} is odd number", k);
+        }
+        //no of even and odd numbers in given input
+        static void Q5()
+        {
+            Console.WriteLine("enter number of inputs:");
+            int k = Int32.Parse(Console.ReadLine());
+            int[] a = new int[k];
+            int even = 0, odd = 0;
+            for (int i = 0; i < k; i++)
+            {
+                a[i] = Int32.Parse(Console.ReadLine());
+            }
+            for (int i = 0; i < k; i++)
+            {
+                if (a[i] % 2 == 0)
+                    even += 1;
+                else
+                    odd += 1;
+            }
+            Console.WriteLine($"{odd} odd numbers and {even} even numbers are present");
+        }
+        //f to c temperature
+        static void Q6()
+        {
+            double ftemp = Convert.ToDouble(Console.ReadLine());
+            double ctemp = (ftemp - 32) / 1.8;
+            Console.WriteLine($"{ctemp} is celcius temperature");
+        }
+        //squares series
+        static void Q8()
+        {
+            int i = 0;
+            while (i < 26)
+            {
+                Console.Write(i * i + " ");
+                i++;
+            }
+        }
+        //factorial
+        static void Q9()
+        {
+            int k = Int32.Parse(Console.ReadLine());
+            int ans = 1;
+            while (k > 0)
+            {
+                ans *= k;
+                k--;
+            }
+            Console.WriteLine(ans);
+        }
+        //fibonacci series
+        static void Q10()
+        {
+            int a = 0, b = 1;
+            while (a <= 40)
+            {
+                Console.Write(a + " ");
+                int c = a + b;
+                a = b;
+                b = c;
+            }
+        }
+        //multiples of a number till 20
+        static void Q11()
+        {
+            int k = Int32.Parse(Console.ReadLine());
+            for (int i = 1; i < 21; i++)
+            {
+                Console.WriteLine("{0} * {1} = {2}", k, i, (k * i));
+            }
+        }
+        //multiples of 7 from 200 to 300
+        static void Q12()
+        {
+            int a = 200, b = 300;
+            while (a <= b)
+            {
+                if (a % 7 == 0)
+                {
+                    Console.Write(a + " ");
+                    a += 7;
+                }
+                else
+                {
+                    a += 1;
+                }
+            }
+        }
+        //largest number
+        static void Q13()
+        {
+            int a = Int32.Parse(Console.ReadLine());
+            int b = Int32.Parse(Console.ReadLine());
+            int c = Int32.Parse(Console.ReadLine());
+            if (a >= b && b >= c)
+                Console.WriteLine("{0} is biggest", a);
+            if (b >= a && b >= c)
+                Console.WriteLine("{0} is biggest", b);
+            if (c >= a && c >= b)
+                Console.WriteLine("{0} is biggest", c);
+        }
+        //smallest number
+        static void Q14()
+        {
+            int a = Int32.Parse(Console.ReadLine());
+            int b = Int32.Parse(Console.ReadLine());
+            int c = Int32.Parse(Console.ReadLine());
+            if (a <= b && b <= c)
+                Console.WriteLine("{0} is smallest", a);
+            if (b <= a && b <= c)
+                Console.WriteLine("{0} is smallest", b);
+            if (c <= a && c <= b)
+                Console.WriteLine("{0} is smallest", c);
+        }
+        //marks question
+        static void Q15()
+        {
+            int[] m = new int[10];
+            int min = 101, max = -1, total = 0;
+            for (int i = 0; i < 10; i++)
+            {
+                m[i] = Int32.Parse(Console.ReadLine());
+            }
+            for (int i = 0; i < 10; i++)
+            {
+                total += m[i];
+                if (m[i] < min)
+                    min = m[i];
+                if (m[i] > max)
+                    max = m[i];
+            }
+            Console.WriteLine("min: {0}", min);
+            Console.WriteLine("max: {0}", max);
+            Console.WriteLine("total: {0}", total);
+            Console.WriteLine("avg: {0}", (total / 10));
+            Array.Sort(m);
+            Console.WriteLine("Ascending order:");
+            for (int i = 0; i < 10; i++)
+                Console.WriteLine(m[i]);
+            Console.WriteLine("descending order:");
+            Array.Reverse(m);
+            for (int i = 0; i < 10; i++)
+                Console.WriteLine(m[i]);
+
+        }
+        //length of string
+        static void Q16()
+        {
+            String s = Console.ReadLine();
+            Console.WriteLine($"Length of {s} is {s.Length}");
+        }
+        //reversing srting
+        static void Q17()
+        {
+            string s = Console.ReadLine();
+            char[] c = s.ToCharArray();
+            Array.Reverse(c);
+            Console.WriteLine(c);
+        }
+        static void Q18()
+        {
+            string s1 = Console.ReadLine();
+            string s2 = Console.ReadLine();
+            if (s1.Equals(s2))
+                Console.WriteLine("same");
+            else
+                Console.WriteLine("not same");
+        }
+        static void Q19()
+        {
+            string s1 = Console.ReadLine();
+            char[] c = s1.ToCharArray();
+            Array.Reverse(c);
+            string s2 = new string(c);
+            if (s1.Equals(s2))
+                Console.WriteLine("palindrome");
+            else
+                Console.WriteLine("not palindrome");
+        }
+        public static void Main(string[] args)
+        {
+            Console.WriteLine(args.Length);
+            Q1(); Q4(); Q5(); Q6(); Q8(); Q9(); Q10(); Q11(); Q12(); Q13(); Q14(); Q15(); Q16(); Q17(); Q18(); Q19();
+            Q2();
+            Q3();
+            Console.ReadLine();
+        }
+    }
+}
