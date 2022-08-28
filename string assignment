@@ -1,0 +1,210 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace String_Assignment
+{
+    class Program
+    {
+          static void a()
+        {
+            string s1 = "The quick brown fox jumps over the lazy dog.";
+            char c = s1[11];
+            Console.WriteLine(c);
+            Console.ReadKey();
+
+        }
+
+        static void b()
+        {
+            string s1 = "The quick brown fox jumps over the lazy dog.";
+           Console.WriteLine(s1.Contains("is"));
+
+        }
+       static void c()
+       {
+           string s1 = "The quick brown fox jumps over the lazy dog";
+           String s2 = "and it Killed";
+              string s3=String .Concat(s1,s2);
+           Console.WriteLine(s3);  
+       }
+
+       static void d()
+       {
+           string s1 = "The quick brown fox jumps over the lazy dog";
+           Console.WriteLine(s1.EndsWith("dog"));
+
+
+       }
+       static void e()
+        {
+            string s1 = "The quick brown fox jumps over the lazy dog.";
+            string s2 = "The quick brown Fox jumps over the lazy Dog”.";
+           Console.WriteLine(s1.Equals(s2));
+
+        }
+        static void f()
+        {
+            string s1 = "The quick brown fox jumps over the lazy dog";
+            string s2 = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG";
+           Console.WriteLine(s1.Equals(s2));
+
+        }
+        static void g()
+        {
+            string s1 = "The quick brown fox jumps over the lazy dog";
+            Console.WriteLine(s1.Length);
+        }
+        static void h()
+        {
+            string s1 = "The quick brown fox jumps over the lazy dog";
+            string s2 = "The quick brown Fox jumps over the lazy Dog";
+            Console.WriteLine(s1.Contains(s2));
+        }
+        static void i()
+        {
+            string s1 = "The quick brown fox jumps over the lazy dog";
+            Console.WriteLine(s1.Replace("The", "A"));
+        }
+        static void j()
+        {
+            string s1 = "The quick brown fox jumps over the lazy dog";
+            string[] s2 = {""};
+            string[] s3=s1.Split(s2,StringSplitOptions.None);
+
+            foreach(string str in s3)
+            {
+                Console.WriteLine(str);
+            }
+            Console.ReadLine();                
+        }
+        
+        static void k()
+         {
+            string s1 = "The quick brown fox jumps over the lazy dog";
+            string s2 = s1.Replace("fox", " ");
+            string s3 = s2.Replace("dog", " ");
+            Console.WriteLine(s3 +"\n fox,dog");      
+
+
+        }
+         static void l()
+         {
+             string s1 = "The quick brown fox jumps over the lazy dog";
+             Console.WriteLine(s1.ToLower());
+         }
+     static void m()
+     {
+         string s1 = "The quick brown fox jumps over the lazy dog";
+         Console.WriteLine(s1.ToUpper());
+     }
+     static void n()
+     {
+         string s1 = "The quick brown fox jumps over the lazy dog";
+         Console.WriteLine(s1.IndexOf('a'));
+     }
+     static void o()
+     {
+         string s1 = "The quick brown fox jumps over the lazy dog";
+         Console.WriteLine(s1.LastIndexOf('e'));
+     }
+        static void q()
+        {
+            
+            string s1= "I WANDER'D lonely as a cloud\r\nThat floats on high o'er vales and hills, \r\nWhen all at once I saw a crowd,\r\nA host, of golden daffodils;Beside the lake, beneath the trees,\r\nFluttering and dancing in the breeze.\r\n";
+            Console.WriteLine(s1);
+        }
+        static void Q1()
+            {
+            int a=int.Parse(Console.ReadLine());    
+            int b=int.Parse(Console.ReadLine());
+            a = a * b;
+            b = a / b;
+            a = a / b;
+            Console.WriteLine(a+" "+b);
+            }
+        static void Q2()
+        {
+            int a=int.Parse(Console.ReadLine());
+            int g = 0, d = 0, r = 0,b;
+            g = a / 144;
+            b = a % 144;
+            d = b / 12;
+            r=b % 12;
+            Console.WriteLine(g + " " + d + " " + r);
+
+            
+        }
+        static void Q3()
+        {
+            int r = int.Parse(Console.ReadLine());
+            int g = int.Parse(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
+            if(r>g && r>b)
+            {
+                Console.WriteLine("reddish");
+            }
+            else if(b>r && b>g)
+                {
+                Console.WriteLine("bluish");
+            }
+            else
+            {
+                Console.WriteLine("greenish");
+            }
+        }
+        static void Q4()
+        {
+            int p=int.Parse(Console.ReadLine());
+            int q=int.Parse(Console.ReadLine());
+            switch(p)
+            {
+                case 1:
+                    Console.WriteLine(q * 22.50);
+                    break;
+                case 2:
+                    Console.WriteLine(q * 44.50);
+                    break ;
+                case 3:
+                    Console.WriteLine(q * 9.98);
+                    break;
+                default:
+                    Console.WriteLine("enter valid product code");
+                    break ;
+
+
+            }
+        }
+
+        public static void Main(string[] args)
+        {
+            a();
+             b();
+            c();
+            d();
+            e();
+            f();
+            g();
+            h();
+            i();
+            j();
+            l();
+            m(); 
+            n();
+            o();
+           q();
+          Q1();  
+            Q2();
+            Q3();
+            Q4();
+
+        }
+    }
+}
+
+
+
+
+
