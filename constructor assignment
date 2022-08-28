@@ -1,0 +1,140 @@
+Create a reference type called Person.  Populate the Person class with the following attributes to store the following information:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Constructor_Assingment
+{
+   internal class Person
+    {
+        string Firstname;
+        string Lastname;
+        string Email;
+        DateTime dateofbirth;
+        
+
+        public Person(string fname,string lname,string email,DateTime dob)
+        {
+            Firstname = fname;
+            Lastname = lname;
+            Email = email;  
+            dateofbirth = dob;
+        }
+        public Person(string fname, string lname, string email)
+        {
+            Firstname = fname;
+            Lastname = lname;
+            Email = email;
+            
+        }
+        public Person(string fname, string lname, DateTime dob)
+        {
+            Firstname = fname;
+            Lastname = lname;
+            dateofbirth = dob;
+        }
+
+
+        public void details()
+        {
+            Console.WriteLine("fname:"+Firstname );
+            Console.WriteLine("lname:"+Lastname );  
+            Console.WriteLine("email:"+Email);  
+            Console.WriteLine("dob:"+dateofbirth);
+        }
+        public void show()
+        {
+            Console.WriteLine("fname:" + Firstname);
+            Console.WriteLine("lname:" + Lastname);
+            Console.WriteLine("email:" + Email);
+        }
+        public void get()
+        {
+            Console.WriteLine("fname:" + Firstname);
+            Console.WriteLine("lname:" + Lastname);
+            Console.WriteLine("dob"+dateofbirth);
+        }
+        
+    }
+}
+
+
+        
+
+
+Create a class called shapes Overload the Area method that has to calculate the area of rectangle, triangle, circle, and square by passing the relevant parameters.
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Constructor_Assingment
+{
+    internal class Shape
+    {
+ 
+        public void area(int x,int y)
+        {
+            int p=x*y;
+            Console.WriteLine("the area of rectangle:" +p);
+        }
+        public void area(int x,float y)
+        {
+            double s =0.5*x*y;
+            Console.WriteLine("the area of triangle:" + s );
+        }
+        public void area(int x)
+        {
+            Console.WriteLine("the area of square:"+Math.Pow(x,2));
+        }
+        public void area(double x)
+        {
+            double d = 3.14 * x * x;
+            Console.WriteLine("the area of circle:"+d);
+        }
+     
+
+       
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Constructor_Assingment
+{
+    internal class Program
+    {
+      
+        public static void Main(string[] args)
+        {
+
+             Person p = new Person("abc", "xyz", "abc@gmail.com",DateTime.Parse("12,2,2015"));
+             p.details();
+             Person p1 = new Person("moh", "joo", "mj@gmail.com");
+             p1.details();
+             Person p2 = new Person("moh", "joo", DateTime.Today);
+             p2.details();
+            Shape s1=new Shape();
+             s1.area(3, 2);
+             s1.area(4,5.1f);
+             s1.area(6);
+             s1.area(4.2);
+
+                
+
+
+        }
+    }
+}
+
+
+
+
