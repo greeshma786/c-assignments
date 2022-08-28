@@ -1,0 +1,99 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HandsOnInterfaces
+{
+    interface IGovtRules
+    {
+        public void  EmployeePF(double sal);
+        public void LeaveDetails();
+        public void GratuityAmount(float sc,double sal);//method
+    }
+    class Tcs : IGovtRules
+    {
+        string empid, name, dept, desg;
+        double sal;
+        float sc;
+        public Tcs(string empid,string name,string dept,string desg, double sal,float sc) { 
+            this.empid = empid;
+            this.name = name;
+            this.dept = dept;
+            this.desg = desg;
+            this.sal = sal;
+            this.sc = sc;
+        }
+        public void EmployeePF(double sal) {
+            Console.WriteLine("12%");
+        }
+        public void LeaveDetails() { 
+            Console.WriteLine("1 day of Casual Leave per month");
+            Console.WriteLine("12 days of Sick Leave per year");
+            Console.WriteLine("10 days of Previlage Leave per year");
+        }
+        public void GratuityAmount(float sc, double sal) {
+            if (sc > 10) {
+                Console.WriteLine("2*Basic Salary = GA");
+            }
+            else if (sc > 20)
+            {
+                Console.WriteLine("3*Basic Salary = GA");
+            }
+            else
+            {
+                Console.WriteLine("No GA");
+            }
+        }
+
+        //implicit implementation
+       
+    }
+    class Accenture : IGovtRules
+    {
+        string empid,name,dept,desg;
+        double sal;
+        float sc;
+        public Accenture(string empid, string name, string dept, string desg, double sal,float sc)
+        {
+            this.empid=empid;
+            this.name=name; 
+            this.dept=dept;
+            this.desg=desg;
+            this.sal=sal;
+            this.sc=sc;
+        }
+        public void EmployeePF(double sal)
+        {
+            Console.WriteLine("12%");
+        }
+        public void LeaveDetails()
+        {
+            Console.WriteLine("2 days of Casual Leave per month");
+            Console.WriteLine("5 days of Sick Leave per year");
+            Console.WriteLine("5 days of Previlage Leave per year");
+        }
+        public void GratuityAmount(float sc, double sal)
+        {
+            Console.WriteLine("Not applicable");
+        }
+
+
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            IGovtRules vh = new Accenture("5b9", "Vh", "cse", "sl", 50.00,15);
+            vh.EmployeePF(50.00);
+            vh.LeaveDetails();
+            vh.GratuityAmount(15,50.00);
+            IGovtRules mh = new Tcs("561","dat","ece","jl",10.00,20);
+            mh.EmployeePF(10.00);
+            mh.LeaveDetails();
+            mh.GratuityAmount(15, 10.00);
+        }
+    }
+}
